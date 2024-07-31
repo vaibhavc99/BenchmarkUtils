@@ -102,7 +102,7 @@ class ResultsFileCreatorTest {
 
         String resultFile = resultsFileCreator.createFor(results);
 
-        assertEquals("TestSuite_v1.2_Scorecard_for_Simple_Result_File_v47.11.csv", resultFile);
+        assertEquals("v1.2_Scorecard_for_Simple_Result_File_v47.11.csv", resultFile);
 
         File file = new File(tmpDir, resultFile);
 
@@ -114,7 +114,7 @@ class ResultsFileCreatorTest {
 
         assertEquals(
                 "# test name, category, CWE, real vulnerability, identified by tool, pass/fail, "
-                        + "TestSuite version: 1.2, Actual results generated: "
+                        + "version: 1.2, Actual results generated: "
                         + sdf.format(new Date()),
                 lines.get(0));
         assertEquals("BenchmarkTest00001, pathtraver, 22, true, true, pass", lines.get(1));
@@ -188,8 +188,7 @@ class ResultsFileCreatorTest {
 
         String resultFile = resultsFileCreator.createFor(results);
 
-        assertEquals(
-                "TestSuite_v1.2_Scorecard_for_Full_Details_Result_File_v47.11.csv", resultFile);
+        assertEquals("v1.2_Scorecard_for_Full_Details_Result_File_v47.11.csv", resultFile);
 
         File file = new File(tmpDir, resultFile);
 
@@ -201,7 +200,7 @@ class ResultsFileCreatorTest {
 
         assertEquals(
                 "# test name, category, CWE, source, data flow, sink, real vulnerability, identified "
-                        + "by tool, pass/fail, TestSuite version: 1.2, Actual results generated: "
+                        + "by tool, pass/fail, version: 1.2, Actual results generated: "
                         + sdf.format(new Date()),
                 lines.get(0));
         assertEquals(

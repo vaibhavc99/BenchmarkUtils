@@ -49,10 +49,10 @@ public class ExpectedResultsProvider {
         try (final CSVParser parser = resultFile.csvRecords()) {
             setResultsMetadata(parser, tr);
 
-            String testCaseName = tr.getTestSuiteName() + BenchmarkScore.TEST;
+            String testCaseName = BenchmarkScore.TEST;
 
             for (CSVRecord record : parser) {
-                if (record.get(TEST_NAME).startsWith(tr.getTestSuiteName() + BenchmarkScore.TEST)) {
+                if (record.get(TEST_NAME).startsWith(BenchmarkScore.TEST)) {
                     TestCaseResult tcr = new TestCaseResult();
 
                     tcr.setTestCaseName(record.get(TEST_NAME));

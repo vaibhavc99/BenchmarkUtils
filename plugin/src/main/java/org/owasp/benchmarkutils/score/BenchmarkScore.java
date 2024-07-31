@@ -76,7 +76,7 @@ public class BenchmarkScore extends AbstractMojo {
     // scorecard generation.
     public static String TESTSUITEVERSION; // Pulled from expected results file
     public static TestSuiteName TESTSUITENAME; // Pulled from expected results file
-    public static final String TEST = "Test";
+    public static final String TEST = "Class";
     public static String TESTCASENAME; // Set w/TESTSUITE. i.e., TESTSUITE + TEST;
 
     public static String TESTPACKAGE = "org.owasp.benchmark.testcode.";
@@ -856,8 +856,8 @@ public class BenchmarkScore extends AbstractMojo {
         try {
             TestSuiteResults tr = ExpectedResultsProvider.parse(new ResultFile(file));
 
-            BenchmarkScore.TESTSUITENAME = new TestSuiteName(tr.getTestSuiteName());
-            BenchmarkScore.TESTCASENAME = tr.getTestSuiteName() + BenchmarkScore.TEST;
+            // BenchmarkScore.TESTSUITENAME = new TestSuiteName(tr.getTestSuiteName());
+            BenchmarkScore.TESTCASENAME = BenchmarkScore.TEST;
 
             return tr;
         } catch (FileNotFoundException e) {

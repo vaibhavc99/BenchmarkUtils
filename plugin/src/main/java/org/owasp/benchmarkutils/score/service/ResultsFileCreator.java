@@ -86,8 +86,8 @@ public class ResultsFileCreator {
 
         ps.print(
                 "real vulnerability, identified by tool, pass/fail, "
-                        + testSuiteName.simpleName()
-                        + " version: "
+                        // + testSuiteName.simpleName()
+                        + "version: "
                         + testSuiteVersion);
 
         ps.println(", Actual results generated: " + sdf.format(new Date()));
@@ -116,10 +116,10 @@ public class ResultsFileCreator {
 
     private String resultsFilename(TestSuiteResults actual) {
         return MessageFormat.format(
-                "{0}{1}{2}_v{3}_Scorecard_for_{4}.csv",
+                "{0}{1}v{2}_Scorecard_for_{3}.csv",
                 scoreCardDir.getAbsolutePath(),
                 File.separator,
-                testSuiteName.simpleName(),
+                // testSuiteName.simpleName(),
                 actual.getTestSuiteVersion(),
                 actual.getToolNameAndVersion().replace(' ', '_'));
     }
